@@ -6,8 +6,8 @@ POST http://localhost:8080/authenticate
 Content-Type: application/json
 
 {
-  "username": "codigger",
-  "password": "sifre"
+  "username": "nablapolat",
+  "password": "mypass"
 }
 
 ###
@@ -15,19 +15,36 @@ POST http://localhost:8080/register
 Content-Type: application/json
 
 {
-  "username":"new employewe",
-  "password": "pass1"
+  "username":"nablapolat",
+  "password": "mypass"
 }
 
 ###
 
 POST http://localhost:8080/createroom
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb2RpZ2dlciIsImV4cCI6MTU2Njg3NDc0NCwiaWF0IjoxNTY2ODU2NzQ0fQ.bheWGZCx5ljsupaCaAJfeYo6GqZQq8nmlVXXidrCOPBTebbN8N-lBFsbPAxWK93mLk-OLmiXZm8UH2m1HO_svg
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWJsYXBvbGF0IiwiZXhwIjoxNTY2OTI1NDU2LCJpYXQiOjE1NjY5MDc0NTZ9.Po--j4iZkNbU8CEhmSb1XtOsSj2FxPlxw01_WA__JaCMYUOjJbnjYELw1ZqRqHjlh9nhezZt_TuR02dr6Kk_NQ
 
 {
-  "name": "main hall2",
+  "name": "main hall2x",
   "adress": "a303"
 }
+
+###
+GET http://localhost:8080/avaiblerooms/20190814/20190816
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWJsYXBvbGF0IiwiZXhwIjoxNTY2OTM4OTQxLCJpYXQiOjE1NjY5MjA5NDF9.TgrcwhKTpzZK8diFq0xj3maRk86YWJwuBXt4oyiSS9HTxadYmuQuUUWQLINtSXBYP71jAe1Zew2l9eToSl52Pw
+
+###
+
+GET http://localhost:8080/reservations
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWJsYXBvbGF0IiwiZXhwIjoxNTY2OTM4OTQxLCJpYXQiOjE1NjY5MjA5NDF9.TgrcwhKTpzZK8diFq0xj3maRk86YWJwuBXt4oyiSS9HTxadYmuQuUUWQLINtSXBYP71jAe1Zew2l9eToSl52Pw
+
+###
+GET http://localhost:8080/unv/20190816/20190814
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWJsYXBvbGF0IiwiZXhwIjoxNTY2OTM4OTQxLCJpYXQiOjE1NjY5MjA5NDF9.TgrcwhKTpzZK8diFq0xj3maRk86YWJwuBXt4oyiSS9HTxadYmuQuUUWQLINtSXBYP71jAe1Zew2l9eToSl52Pw
+
+###
+GET http://localhost:8080/getrooms
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWJsYXBvbGF0IiwiZXhwIjoxNTY2OTM4OTQxLCJpYXQiOjE1NjY5MjA5NDF9.TgrcwhKTpzZK8diFq0xj3maRk86YWJwuBXt4oyiSS9HTxadYmuQuUUWQLINtSXBYP71jAe1Zew2l9eToSl52Pw
 
 ###

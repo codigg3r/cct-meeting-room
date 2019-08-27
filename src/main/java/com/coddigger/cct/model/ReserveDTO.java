@@ -3,8 +3,8 @@ package com.coddigger.cct.model;
 public class ReserveDTO {
     private String roomid;
     private String createdby;
-    private String fromdate;
-    private String todate;
+    private int fromdate;
+    private int todate;
     private String title;
 
     public String getTitle() {
@@ -31,19 +31,19 @@ public class ReserveDTO {
         this.createdby = createdby;
     }
 
-    public String getFromdate() {
+    public int getFromdate() {
         return fromdate;
     }
 
-    public void setFromdate(String fromdate) {
+    public void setFromdate(int fromdate) {
         this.fromdate = fromdate;
     }
 
-    public String getTodate() {
+    public int getTodate() {
         return todate;
     }
 
-    public void setTodate(String todate) {
+    public void setTodate(int todate) {
         this.todate = todate;
     }
 }

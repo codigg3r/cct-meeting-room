@@ -1,8 +1,5 @@
 package com.coddigger.cct.model;
 
-
-import sun.util.resources.Bundles;
-
 import javax.persistence.*;
 
 @Entity
@@ -20,10 +17,21 @@ public class DAOReserve {
     private String createdby;
 
     @Column
-    private String fromdate;
+    private int fromdate;
+
+    @Column
+    private int todate;
 
     @Column
     private String title;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -49,22 +57,19 @@ public class DAOReserve {
         this.createdby = createdby;
     }
 
-    public String getFromdate() {
+    public int getFromdate() {
         return fromdate;
     }
 
-    public void setFromdate(String fromdate) {
+    public void setFromdate(int fromdate) {
         this.fromdate = fromdate;
     }
 
-    public String getTodate() {
+    public int getTodate() {
         return todate;
     }
 
-    public void setTodate(String todate) {
+    public void setTodate(int todate) {
         this.todate = todate;
     }
-
-    @Column
-    private String todate;
 }

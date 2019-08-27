@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
 @RestController
 public class RoomController {
 
@@ -15,8 +16,9 @@ public class RoomController {
 
     @GetMapping("/getrooms")
     public ResponseEntity<?> getRooms(){
-        return ResponseEntity.ok(roomService.rooms());
+        return ResponseEntity.ok(roomService.getRooms());
     }
+
     @PostMapping("/createroom")
     public ResponseEntity createRoom(@RequestBody RoomDTO room){
         boolean isRoomCreadted = roomService.save(room);
@@ -25,4 +27,30 @@ public class RoomController {
         }
         return new ResponseEntity<>(HttpStatus.IM_USED);
     }
+
+    @GetMapping("/avaiblerooms/{to}/{from}")
+    public ResponseEntity<?> getAvaibleRooms(@PathVariable String from,@PathVariable String to){
+        return ResponseEntity.ok(roomService.listAvaibleRoom(Integer.parseInt(from),Integer.parseInt(to)));
+    }
+
+    @GetMapping("/reservations")
+    public ResponseEntity<?> getReservations(){
+        return ResponseEntity.ok(roomService.getReservations());
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

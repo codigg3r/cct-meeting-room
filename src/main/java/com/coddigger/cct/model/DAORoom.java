@@ -1,5 +1,7 @@
 package com.coddigger.cct.model;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 
 @Entity
@@ -15,6 +17,14 @@ public class DAORoom {
 
     @Column
     private String adress;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

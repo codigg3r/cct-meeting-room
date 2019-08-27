@@ -8,4 +8,5 @@ import java.util.ArrayList;
 public interface RoomDao extends CrudRepository<DAORoom,Integer> {
     DAORoom findByName(String name);
     ArrayList<DAORoom> getAllByIdGreaterThan(long id);
+
 }
