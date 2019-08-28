@@ -9,10 +9,9 @@ import com.coddigger.cct.model.DAORoom;
 import com.coddigger.cct.model.ReserveDTO;
 import com.coddigger.cct.model.RoomDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDate;
-import java.time.chrono.ChronoLocalDate;
 import java.util.ArrayList;
 
 @Component
@@ -81,8 +80,20 @@ public class RoomService {
         return allRooms;
     }
 
+    public boolean cancelReserve(ReserveDTO reserve){
+        if (reserve.getCreatedby().equals(new JwtRequestFilter().getUsername())){
+            try {
+                reserveDao.deleteById(reserve.getId());
+            }catch (EmptyResultDataAccessException e){
+                return false;
+            }
+            return true;
+        }
+        return false;
+    }
+
     public ArrayList<DAOReserve> listUnavaibleReserves(int fromdate,int todate){
-        //--------------------------a-----------------------b-----------beta-----alpha
+        //--------------------------a-----------------b-----------------beta-----alpha
         return reserveDao.findAllByFromdateLessThanAndTodateGreaterThan(todate,fromdate);
     }
 

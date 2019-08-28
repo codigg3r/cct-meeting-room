@@ -1,11 +1,11 @@
 GET localhost:8080/getrooms
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWJsYXBvbGF0IiwiZXhwIjoxNTY3MDIzMTc1LCJpYXQiOjE1NjcwMDUxNzV9.5-rg0hthuvakSd1Ha3axkHC877jz3-exZX5X2M5bHjHMGiYq3VwUSvuVOp8WwpZCebNGaDxZ2BtkzQf5y_5zVQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdWtydSBwb2xhdCIsImV4cCI6MTU2NzA1MTA4MywiaWF0IjoxNTY3MDMzMDgzfQ.rUf9wlLwQK7w3ueg2PMjZmb-AJ8DkTeClhRxod9BG76-f-aUacVoIKRnlOKchr_Iq1B-fd7D2dYTGAXpMnkYng
 ###
 POST http://localhost:8080/authenticate
 Content-Type: application/json
 
 {
-  "username": "nablapolat",
+  "username": "sukru polat",
   "password": "mypass"
 }
 ###
@@ -13,37 +13,52 @@ POST http://localhost:8080/register
 Content-Type: application/json
 
 {
-  "username":"nablapolat",
+  "username":"sukru polat",
   "password": "mypass"
 }
 ###
 POST http://localhost:8080/createroom
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWJsYXBvbGF0IiwiZXhwIjoxNTY3MDIzMTc1LCJpYXQiOjE1NjcwMDUxNzV9.5-rg0hthuvakSd1Ha3axkHC877jz3-exZX5X2M5bHjHMGiYq3VwUSvuVOp8WwpZCebNGaDxZ2BtkzQf5y_5zVQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdWtydSBwb2xhdCIsImV4cCI6MTU2NzA1MTA4MywiaWF0IjoxNTY3MDMzMDgzfQ.rUf9wlLwQK7w3ueg2PMjZmb-AJ8DkTeClhRxod9BG76-f-aUacVoIKRnlOKchr_Iq1B-fd7D2dYTGAXpMnkYng
 
 {
-  "name": "lounge",
-  "adress": "mid town"
+  "name": "meeting room 1",
+  "adress": "2. floor room number 223"
 }
 ###
 GET http://localhost:8080/avaiblerooms/20190718/20190719
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWJsYXBvbGF0IiwiZXhwIjoxNTY3MDIzMTc1LCJpYXQiOjE1NjcwMDUxNzV9.5-rg0hthuvakSd1Ha3axkHC877jz3-exZX5X2M5bHjHMGiYq3VwUSvuVOp8WwpZCebNGaDxZ2BtkzQf5y_5zVQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdWtydSBwb2xhdCIsImV4cCI6MTU2NzA1MTA4MywiaWF0IjoxNTY3MDMzMDgzfQ.rUf9wlLwQK7w3ueg2PMjZmb-AJ8DkTeClhRxod9BG76-f-aUacVoIKRnlOKchr_Iq1B-fd7D2dYTGAXpMnkYng
 
 ###
 
 GET http://localhost:8080/reservations
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWJsYXBvbGF0IiwiZXhwIjoxNTY3MDIzMTc1LCJpYXQiOjE1NjcwMDUxNzV9.5-rg0hthuvakSd1Ha3axkHC877jz3-exZX5X2M5bHjHMGiYq3VwUSvuVOp8WwpZCebNGaDxZ2BtkzQf5y_5zVQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdWtydSBwb2xhdCIsImV4cCI6MTU2NzA1MTA4MywiaWF0IjoxNTY3MDMzMDgzfQ.rUf9wlLwQK7w3ueg2PMjZmb-AJ8DkTeClhRxod9BG76-f-aUacVoIKRnlOKchr_Iq1B-fd7D2dYTGAXpMnkYng
 
 ###
 POST http://localhost:8080/createreserve
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWJsYXBvbGF0IiwiZXhwIjoxNTY3MDIzMTc1LCJpYXQiOjE1NjcwMDUxNzV9.5-rg0hthuvakSd1Ha3axkHC877jz3-exZX5X2M5bHjHMGiYq3VwUSvuVOp8WwpZCebNGaDxZ2BtkzQf5y_5zVQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdWtydSBwb2xhdCIsImV4cCI6MTU2NzA1MTA4MywiaWF0IjoxNTY3MDMzMDgzfQ.rUf9wlLwQK7w3ueg2PMjZmb-AJ8DkTeClhRxod9BG76-f-aUacVoIKRnlOKchr_Iq1B-fd7D2dYTGAXpMnkYng
 
 {
-  "roomid": 9,
-  "fromdate": 20190718 ,
-  "todate":  20190719,
-  "title": "I've tried to create a reserve"
+  "roomid": 10,
+  "fromdate": 20190915 ,
+  "todate":  20190916,
+  "title": "Interview with sukru polat"
+}
+
+###
+POST http://localhost:8080/cancelreserve
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdWtydSBwb2xhdCIsImV4cCI6MTU2NzA1MTA4MywiaWF0IjoxNTY3MDMzMDgzfQ.rUf9wlLwQK7w3ueg2PMjZmb-AJ8DkTeClhRxod9BG76-f-aUacVoIKRnlOKchr_Iq1B-fd7D2dYTGAXpMnkYng
+
+
+{
+  "id": 21,
+  "roomid": 10,
+  "createdby": "sukru polat",
+  "fromdate": 20190915,
+  "todate": 20190916,
+  "title": "Interview with sukru polat"
 }
 
 ###

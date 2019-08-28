@@ -1,5 +1,6 @@
 package com.coddigger.cct.controller;
 
+import com.coddigger.cct.model.DAOReserve;
 import com.coddigger.cct.model.ReserveDTO;
 import com.coddigger.cct.model.RoomDTO;
 import com.coddigger.cct.service.RoomService;
@@ -48,7 +49,14 @@ public class RoomController {
         return new ResponseEntity<>(HttpStatus.IM_USED);
     }
 
-
+    @PostMapping("/cancelreserve")
+    public  ResponseEntity cancelReserve(@RequestBody ReserveDTO reserve){
+        boolean isReserveCanceled = roomService.cancelReserve(reserve);
+        if (isReserveCanceled){
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        return new ResponseEntity(HttpStatus.FORBIDDEN);
+    }
 
 
 
