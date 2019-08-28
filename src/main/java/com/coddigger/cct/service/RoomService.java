@@ -6,6 +6,7 @@ import com.coddigger.cct.dao.ReserveDao;
 import com.coddigger.cct.dao.RoomDao;
 import com.coddigger.cct.model.DAOReserve;
 import com.coddigger.cct.model.DAORoom;
+import com.coddigger.cct.model.ReserveDTO;
 import com.coddigger.cct.model.RoomDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -45,25 +46,44 @@ public class RoomService {
         return reserveDao.getAllByIdGreaterThan(0L);
     }
 
+    public boolean save(ReserveDTO reserve){
+        ArrayList<DAORoom> avaibleRooms = listAvaibleRoom(reserve.getFromdate(),reserve.getTodate());
+        for (DAORoom room:avaibleRooms){
+            if (room.getId() == reserve.getRoomid()){
+                DAOReserve reserve1 = new DAOReserve();
+                reserve1.setCreatedby(new JwtRequestFilter().getUsername());
+                reserve1.setFromdate(reserve.getFromdate());
+                reserve1.setTodate(reserve.getTodate());
+                reserve1.setRoomid(reserve.getRoomid());
+                reserve1.setTitle(reserve.getTitle());
+                reserveDao.save(reserve1);
+                return true;
+
+            }
+        }
+        return false;
+    }
+
     public ArrayList<DAORoom> listAvaibleRoom(int fromdate, int todate){
         ArrayList<DAOReserve>  unavaibleReserves = listUnavaibleReserves(fromdate,todate);
-        ArrayList<DAORoom> avaibleRooms = getRooms();
+        ArrayList<DAORoom> allRooms = getRooms();
 
         ArrayList<DAORoom> unavaibleRooms = new ArrayList<>();
 
         for (DAOReserve reserve: unavaibleReserves){
-            for (DAORoom room : avaibleRooms){
-                if (room.getId() == reserve.getId() ){
+            for (DAORoom room : allRooms){
+                if (room.getId() == reserve.getRoomid() ){
                     unavaibleRooms.add(room);
                 }
             }
         }
-        avaibleRooms.removeAll(unavaibleRooms);
-        return avaibleRooms;
+        allRooms.removeAll(unavaibleRooms);
+        return allRooms;
     }
 
     public ArrayList<DAOReserve> listUnavaibleReserves(int fromdate,int todate){
-        return reserveDao.findAllByFromdateLessThanAndTodateGreaterThan(fromdate,todate);
+        //--------------------------a-----------------------b-----------beta-----alpha
+        return reserveDao.findAllByFromdateLessThanAndTodateGreaterThan(todate,fromdate);
     }
 
 

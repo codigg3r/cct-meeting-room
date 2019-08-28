@@ -1,5 +1,6 @@
 package com.coddigger.cct.controller;
 
+import com.coddigger.cct.model.ReserveDTO;
 import com.coddigger.cct.model.RoomDTO;
 import com.coddigger.cct.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,7 @@ public class RoomController {
         return new ResponseEntity<>(HttpStatus.IM_USED);
     }
 
-    @GetMapping("/avaiblerooms/{to}/{from}")
+    @GetMapping("/avaiblerooms/{from}/{to}")
     public ResponseEntity<?> getAvaibleRooms(@PathVariable String from,@PathVariable String to){
         return ResponseEntity.ok(roomService.listAvaibleRoom(Integer.parseInt(from),Integer.parseInt(to)));
     }
@@ -36,6 +37,15 @@ public class RoomController {
     @GetMapping("/reservations")
     public ResponseEntity<?> getReservations(){
         return ResponseEntity.ok(roomService.getReservations());
+    }
+
+    @PostMapping("/createreserve")
+    public ResponseEntity createReservation(@RequestBody ReserveDTO reserve){
+        boolean isReservationCreated = roomService.save(reserve);
+        if (isReservationCreated){
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        }
+        return new ResponseEntity<>(HttpStatus.IM_USED);
     }
 
 

@@ -11,7 +11,7 @@ public class DAOReserve {
     private long id;
 
     @Column
-    private String roomid;
+    private int roomid;
 
     @Column
     private String createdby;
@@ -41,11 +41,11 @@ public class DAOReserve {
         this.title = title;
     }
 
-    public String getRoomid() {
+    public int getRoomid() {
         return roomid;
     }
 
-    public void setRoomid(String roomid) {
+    public void setRoomid(int roomid) {
         this.roomid = roomid;
     }
 

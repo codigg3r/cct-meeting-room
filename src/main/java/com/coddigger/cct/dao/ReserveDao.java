@@ -6,11 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.ArrayList;
 
 public interface ReserveDao extends CrudRepository<DAOReserve,Integer> {
-        ArrayList<DAOReserve> getAllByFromdateGreaterThan(int todate);
-        ArrayList<DAOReserve> getAllByTodateLessThan(int fromdate);
-
-        ArrayList<DAOReserve> findAllByFromdateLessThanAndTodateGreaterThan(int fromdate, int todate);
-
+        ArrayList<DAOReserve> findAllByFromdateLessThanAndTodateGreaterThan(int todate, int fromdate);
         //list reseres
         ArrayList<DAOReserve> getAllByIdGreaterThan(long id);
 

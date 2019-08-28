@@ -1,11 +1,11 @@
 package com.coddigger.cct.model;
 
 public class ReserveDTO {
-    private String roomid;
+    private String title;
     private String createdby;
     private int fromdate;
     private int todate;
-    private String title;
+    private int roomid;
 
     public String getTitle() {
         return title;
@@ -13,14 +13,6 @@ public class ReserveDTO {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getRoomid() {
-        return roomid;
-    }
-
-    public void setRoomid(String roomid) {
-        this.roomid = roomid;
     }
 
     public String getCreatedby() {
@@ -45,5 +37,13 @@ public class ReserveDTO {
 
     public void setTodate(int todate) {
         this.todate = todate;
+    }
+
+    public int getRoomid() {
+        return roomid;
+    }
+
+    public void setRoomid(int roomid) {
+        this.roomid = roomid;
     }
 }
