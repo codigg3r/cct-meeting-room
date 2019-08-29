@@ -41,7 +41,6 @@ public class RoomService {
 
 
     public ArrayList<DAOReserve> getReservations(){
-        System.out.println(new JwtRequestFilter().getUsername());
         return reserveDao.getAllByIdGreaterThan(0L);
     }
 
@@ -83,7 +82,7 @@ public class RoomService {
     public boolean cancelReserve(ReserveDTO reserve){
         if (reserve.getCreatedby().equals(new JwtRequestFilter().getUsername())){
             try {
-                reserveDao.deleteById(reserve.getId());
+                 reserveDao.deleteById(reserve.getId());
             }catch (EmptyResultDataAccessException e){
                 return false;
             }
