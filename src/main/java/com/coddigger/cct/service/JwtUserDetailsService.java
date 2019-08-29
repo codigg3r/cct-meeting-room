@@ -30,6 +30,7 @@ public class JwtUserDetailsService implements UserDetailsService {
         }
         return new User(user.getUsername(), user.getPassword(), new ArrayList<>());
     }
+
     public DAOUser save(UserDTO user) {
         DAOUser daoUser = userDao.findByUsername(user.getUsername());
         if (daoUser != null) {

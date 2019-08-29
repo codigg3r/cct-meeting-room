@@ -13,8 +13,8 @@ POST http://localhost:8080/register
 Content-Type: application/json
 
 {
-  "username":"sukru polat",
-  "password": "mypass"
+  "username":"testUser",
+  "password": "testPass"
 }
 ###
 POST http://localhost:8080/createroom

@@ -7,18 +7,15 @@ import com.coddigger.cct.model.DAOReserve;
 import com.coddigger.cct.model.DAORoom;
 import com.coddigger.cct.model.ReserveDTO;
 import com.coddigger.cct.model.RoomDTO;
-import javassist.NotFoundException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.test.context.junit4.SpringRunner;
 
 
 import java.util.ArrayList;
-import java.util.EmptyStackException;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
@@ -256,7 +253,7 @@ public class RoomServiceTests {
 
         when(jwtRequestFilter.getUsername()).thenReturn("testUser");
 
-        when(reserveDao.deleteBy(1)).thenReturn(reserve);
+        when(reserveDao.deleteById(1)).thenReturn(reserve);
 
         assertEquals(service.cancelReserve(reserve),false);
         //TODO: fail test check later..

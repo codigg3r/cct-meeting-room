@@ -17,6 +17,14 @@ public class DAOUser {
     @JsonIgnore
     private String password;
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public String getUsername() {
         return username;
     }

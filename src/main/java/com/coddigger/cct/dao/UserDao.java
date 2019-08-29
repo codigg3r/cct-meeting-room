@@ -7,7 +7,7 @@ import com.coddigger.cct.model.DAOUser;
 
 @Repository
 public interface UserDao extends CrudRepository<DAOUser, Integer> {
-    DAOUser findByUsername(String usernmae);
+    DAOUser findByUsername(String username);
 
 
 }
