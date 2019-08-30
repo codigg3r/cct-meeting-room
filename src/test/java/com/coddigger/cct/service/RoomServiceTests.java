@@ -59,24 +59,24 @@ public class RoomServiceTests {
         ArrayList<DAORoom> rooms = new ArrayList<>();
 
         DAORoom room1 = new DAORoom();
-        room1.setId(1L);
+        room1.setId(1);
         room1.setName("testName");
         room1.setAdress("testAdress");
         rooms.add(room1);
 
         DAORoom room2 = new DAORoom();
-        room2.setId(2L);
+        room2.setId(2);
         room2.setName("testName");
         room2.setAdress("testAdress");
         rooms.add(room2);
 
         DAORoom room3 = new DAORoom();
-        room3.setId(3L);
+        room3.setId(3);
         room3.setName("testName");
         room3.setAdress("testAdress");
         rooms.add(room3);
 
-        when(roomDao.getAllByIdGreaterThan(0L)).thenReturn(rooms);
+        when(roomDao.getAllByIdGreaterThan(0)).thenReturn(rooms);
 
         assertEquals(service.getRooms(),rooms);
 
@@ -135,7 +135,7 @@ public class RoomServiceTests {
 
         when(reserveDao.findAllByFromdateLessThanAndTodateGreaterThan(20190830,20190829))
                 .thenReturn(reserves);
-        when(roomDao.getAllByIdGreaterThan(0L)).thenReturn(rooms);
+        when(roomDao.getAllByIdGreaterThan(0)).thenReturn(rooms);
 
         assertEquals(service.listAvaibleRoom(20190829,20190830),avaibleRooms);
     }
@@ -190,7 +190,7 @@ public class RoomServiceTests {
 
         when(reserveDao.findAllByFromdateLessThanAndTodateGreaterThan(20190830,20190829))
                 .thenReturn(reserves);
-        when(roomDao.getAllByIdGreaterThan(0L)).thenReturn(rooms);
+        when(roomDao.getAllByIdGreaterThan(0)).thenReturn(rooms);
 
         when(jwtRequestFilter.getUsername()).thenReturn("testUser");
 
@@ -237,7 +237,7 @@ public class RoomServiceTests {
         reserve2.setTitle("test title 2");
         reserves.add(reserve2);
 
-        when(reserveDao.getAllByIdGreaterThan(0L)).thenReturn(reserves);
+        when(reserveDao.getAllByIdGreaterThan(0)).thenReturn(reserves);
         assertEquals(service.getReservations(),reserves);
     }
     
@@ -246,16 +246,16 @@ public class RoomServiceTests {
         ReserveDTO reserve = new ReserveDTO();
         reserve.setId(1);
         reserve.setRoomid(1);
-        reserve.setCreatedby("testUser");
+        reserve.setCreatedby("");
         reserve.setFromdate(20190829);
         reserve.setTodate(20190830);
         reserve.setTitle("Lorem ipsum dolor sit amet");
 
-        when(jwtRequestFilter.getUsername()).thenReturn("testUser");
+        when(jwtRequestFilter.getUsername()).thenReturn("");
 
-        when(reserveDao.deleteById(1)).thenReturn(reserve);
+        when(reserveDao.deleteById(anyInt())).thenReturn(null);
 
-        assertEquals(service.cancelReserve(reserve),false);
+        assertEquals(service.cancelReserve(reserve),true);
         //TODO: fail test check later..
 
     }
@@ -277,29 +277,4 @@ public class RoomServiceTests {
 
         assertEquals(service.listUnavaibleReserves(20190829,20190830),reserves);
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

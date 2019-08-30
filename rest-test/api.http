@@ -4,10 +4,7 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdWtydSBwb2xhdCIsImV4cCI6M
 POST http://localhost:8080/authenticate
 Content-Type: application/json
 
-{
-  "username": "sukru polat",
-  "password": "mypass"
-}
+{"username":"testUser","password":"testPass"}
 ###
 POST http://localhost:8080/register
 Content-Type: application/json
@@ -21,10 +18,7 @@ POST http://localhost:8080/createroom
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdWtydSBwb2xhdCIsImV4cCI6MTU2NzA1MTA4MywiaWF0IjoxNTY3MDMzMDgzfQ.rUf9wlLwQK7w3ueg2PMjZmb-AJ8DkTeClhRxod9BG76-f-aUacVoIKRnlOKchr_Iq1B-fd7D2dYTGAXpMnkYng
 
-{
-  "name": "meeting room 1",
-  "adress": "2. floor room number 223"
-}
+{"name": "00000","adress": "111111"}
 ###
 GET http://localhost:8080/avaiblerooms/20190718/20190719
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdWtydSBwb2xhdCIsImV4cCI6MTU2NzA1MTA4MywiaWF0IjoxNTY3MDMzMDgzfQ.rUf9wlLwQK7w3ueg2PMjZmb-AJ8DkTeClhRxod9BG76-f-aUacVoIKRnlOKchr_Iq1B-fd7D2dYTGAXpMnkYng
@@ -40,14 +34,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdWtydSBwb2xhdCIsImV4cCI6MTU2NzEwNDEwNSwiaWF0IjoxNTY3MDg2MTA1fQ.Bb7Ol7oQFiMPitpI46ksg9s3j9N4vUMRqlwc4NCKJAas-uUgSsQX7PlvY-Uvwt2o5Wna0NJjSRL4zdKRu2TlUQ
 
 
-{
-  "id": 22,
-  "roomid": 10,
-  "createdby": "sukru polat",
-  "fromdate": 20190915,
-  "todate": 20190916,
-  "title": "Interview with sukru polat"
-}
+{"id": 22,"roomid": 10,"createdby": "testUser", "fromdate": 20190915, "todate": 20190916, "title": "Interview with sukru polat"}
 
 ###
 POST http://localhost:8080/cancelreserve

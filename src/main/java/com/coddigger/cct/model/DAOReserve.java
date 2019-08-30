@@ -8,10 +8,10 @@ public class DAOReserve {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
 
     @Column
-    private long roomid;
+    private int roomid;
 
     @Column
     private String createdby;
@@ -25,11 +25,11 @@ public class DAOReserve {
     @Column
     private String title;
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -41,11 +41,11 @@ public class DAOReserve {
         this.title = title;
     }
 
-    public long getRoomid() {
+    public int getRoomid() {
         return roomid;
     }
 
-    public void setRoomid(long roomid) {
+    public void setRoomid(int roomid) {
         this.roomid = roomid;
     }
 

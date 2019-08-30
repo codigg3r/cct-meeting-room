@@ -36,12 +36,12 @@ public class RoomService {
     }
 
     public ArrayList<DAORoom> getRooms(){
-        return roomDao.getAllByIdGreaterThan(0L);
+        return roomDao.getAllByIdGreaterThan(0);
     }
 
 
     public ArrayList<DAOReserve> getReservations(){
-        return reserveDao.getAllByIdGreaterThan(0L);
+        return reserveDao.getAllByIdGreaterThan(0);
     }
 
     public boolean save(ReserveDTO reserve){

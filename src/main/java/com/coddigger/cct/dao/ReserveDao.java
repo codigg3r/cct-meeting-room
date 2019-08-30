@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public interface ReserveDao extends CrudRepository<DAOReserve,Integer> {
         ArrayList<DAOReserve> findAllByFromdateLessThanAndTodateGreaterThan(int todate, int fromdate);
         //list reseres
-        ArrayList<DAOReserve> getAllByIdGreaterThan(long id);
+        ArrayList<DAOReserve> getAllByIdGreaterThan(int id);
         ReserveDTO deleteById(int id);
 
 }

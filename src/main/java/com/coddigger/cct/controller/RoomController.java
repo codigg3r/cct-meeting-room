@@ -1,6 +1,5 @@
 package com.coddigger.cct.controller;
 
-import com.coddigger.cct.model.DAOReserve;
 import com.coddigger.cct.model.ReserveDTO;
 import com.coddigger.cct.model.RoomDTO;
 import com.coddigger.cct.service.RoomService;
