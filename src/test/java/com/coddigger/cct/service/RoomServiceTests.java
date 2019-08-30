@@ -256,8 +256,6 @@ public class RoomServiceTests {
         when(reserveDao.deleteById(anyInt())).thenReturn(null);
 
         assertEquals(service.cancelReserve(reserve),true);
-        //TODO: fail test check later..
-
     }
 
     @Test
