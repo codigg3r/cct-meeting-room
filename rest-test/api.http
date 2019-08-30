@@ -31,15 +31,15 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdWtydSBwb2xhdCIsImV4cCI6M
 ###
 POST http://localhost:8080/createreserve
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdWtydSBwb2xhdCIsImV4cCI6MTU2NzEwNDEwNSwiaWF0IjoxNTY3MDg2MTA1fQ.Bb7Ol7oQFiMPitpI46ksg9s3j9N4vUMRqlwc4NCKJAas-uUgSsQX7PlvY-Uvwt2o5Wna0NJjSRL4zdKRu2TlUQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlciIsImV4cCI6MTU2NzE3NjQ0OSwiaWF0IjoxNTY3MTU4NDQ5fQ.CWXx1wGCKfkFh6tOZp6FuviQ0d6U66Jfo-uYNapSsizx7M7Wx0qMKmWoZTD-Nb8CQKyT-Eb46swKFp8fLY4QAw
 
 
-{"id": 22,"roomid": 10,"createdby": "testUser", "fromdate": 20190915, "todate": 20190916, "title": "Interview with sukru polat"}
+{"roomid": 10,"createdby": "testUser", "fromdate": 20190917, "todate": 20190918, "title": "Interview with sukru polat"}
 
 ###
 POST http://localhost:8080/cancelreserve
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdWtydSBwb2xhdCIsImV4cCI6MTU2NzEwNDEwNSwiaWF0IjoxNTY3MDg2MTA1fQ.Bb7Ol7oQFiMPitpI46ksg9s3j9N4vUMRqlwc4NCKJAas-uUgSsQX7PlvY-Uvwt2o5Wna0NJjSRL4zdKRu2TlUQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlciIsImV4cCI6MTU2NzE3NjQ0OSwiaWF0IjoxNTY3MTU4NDQ5fQ.CWXx1wGCKfkFh6tOZp6FuviQ0d6U66Jfo-uYNapSsizx7M7Wx0qMKmWoZTD-Nb8CQKyT-Eb46swKFp8fLY4QAw
 
 
 {

@@ -5,6 +5,8 @@ import com.coddigger.cct.model.JwtRequest;
 import com.coddigger.cct.model.JwtResponse;
 import com.coddigger.cct.model.UserDTO;
 import com.coddigger.cct.service.JwtUserDetailsService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -27,6 +29,8 @@ public class JwtAuthenticationController {
     @Autowired
     private JwtUserDetailsService userDetailsService;
 
+    Logger logger = LoggerFactory.getLogger(JwtAuthenticationController.class);
+
     @PostMapping("/authenticate")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
 
@@ -36,12 +40,13 @@ public class JwtAuthenticationController {
                 .loadUserByUsername(authenticationRequest.getUsername());
 
         final String token = jwtTokenUtil.generateToken(userDetails);
-
+        logger.info("User authenticated successfully.");
         return ResponseEntity.ok(new JwtResponse(token));
     }
 
     @PostMapping("/register")
     public ResponseEntity<?> saveUser(@RequestBody UserDTO user) {
+        logger.info("New user has saved successfully.");
         return ResponseEntity.ok(userDetailsService.save(user));
     }
 
@@ -49,8 +54,10 @@ public class JwtAuthenticationController {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
         } catch (DisabledException e) {
+            logger.warn("Authentication failed: USER_DISABLED");
             throw new Exception("USER_DISABLED", e);
         } catch (BadCredentialsException e) {
+            logger.warn("Authenticaiton failed:INVALID_CREDETIALS");
             throw new Exception("INVALID_CREDENTIALS", e);
         }
     }
